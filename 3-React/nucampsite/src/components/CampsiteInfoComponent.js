@@ -1,7 +1,11 @@
-import { render } from "@testing-library/react";
 import React, { Component } from "react";
-import {Card,CardImg,CardImgOverlay,CardText,CardBody,CardTitle,} from "reactstrap";
-
+import {
+  Card,
+  CardImg,
+  CardText,
+  CardBody,
+  CardTitle,
+} from "reactstrap";
 
 class CampsiteInfo extends Component {
   renderCampsite(campsite) {
@@ -33,9 +37,9 @@ class CampsiteInfo extends Component {
           })}
         </div>
       );
-    } else {
-      return <div />
-    }
+    } 
+      return <div />;
+    
   }
 
   render() {
@@ -48,10 +52,10 @@ class CampsiteInfo extends Component {
           </div>
         </div>
       );
-    }; 
+    } else {
       return <div />;
-     
     }
   }
+}
 
 export default CampsiteInfo;
