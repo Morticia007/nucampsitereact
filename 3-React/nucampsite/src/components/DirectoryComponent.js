@@ -11,12 +11,11 @@ class Directory extends Component {
               width='100%'
               src={campsite.image}
               alt={campsite.name}
-              height='1000'
+             
             />
             <CardImgOverlay>
               <CardTitle>{campsite.name}</CardTitle>
-              <CardTitle>{'ASS'}</CardTitle>
-            </CardImgOverlay>
+             </CardImgOverlay>
           </Card>
         </div>
       );
