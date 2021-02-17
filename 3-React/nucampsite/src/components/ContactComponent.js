@@ -8,7 +8,7 @@ import {
   Row,
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { Control, LocalForm, Errors } from 'react-redux-form';
+import { Control,Form, Errors } from 'react-redux-form';
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !val || val.length <= len;
@@ -40,10 +40,13 @@ class Contact extends Component {
     this.handlSubmit = this.handleSubmit.bind(this);
   }
 
+ 
   handleSubmit(values) {
-    console.log('current state is: ' + JSON.stringify(values));
-    alert('current state is: ' + JSON.stringify(values));
-  }
+    console.log('Current State is: ' + JSON.stringify(values));
+    alert('Current State is: ' + JSON.stringify(values));
+    this.props.resetFeedbackForm();
+}
+ 
   render() {
     return (
       <div className='container'>
@@ -91,7 +94,8 @@ class Contact extends Component {
             <hr />
           </div>
           <div className='col-md-10'>
-            <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
+          <Form model="feedbackForm" onSubmit={values => this.handleSubmit(values)}>       
+                          
               <Row className='form-group'>
                 <Label htmlFor='firstName' md={2}>
                   First Name
@@ -179,7 +183,7 @@ class Contact extends Component {
                       required: 'Required',
                       minLength: 'Must be at least 10 numbers',
                       maxLength: 'Must be 15 numbers or less',
-                      isNumber: 'must be a number',
+                      isNumber: 'Must be a number',
                     }}
                   />
                 </Col>
@@ -258,7 +262,7 @@ class Contact extends Component {
                   </Button>
                 </Col>
               </Row>
-            </LocalForm>
+            </Form>
           </div>
         </div>
       </div>
