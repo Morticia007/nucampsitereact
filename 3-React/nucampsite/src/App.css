@@ -4,11 +4,13 @@ body {
 
 h1, h2, h3, .card-body>.card-title {
   font-family: "Lobster", cursive;
+  
 }
 
 .card-title {
   font-weight: 500;
   font-size: 1.25rem;
+ 
 }
 
 h2 {
@@ -48,12 +50,14 @@ h2 {
 .page-enter {
   opacity: 0;
   transform: translateX(-100%);
+
 }
 
 .page-enter-active {
   opacity: 1;
   transform: translateX(0%);
   transition: 300ms ease-out;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .page-exit {
@@ -63,5 +67,7 @@ h2 {
 .page-exit-active {
   opacity: 0;
   transition: 300ms ease-in;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+ 
 }
 
